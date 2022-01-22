@@ -14,3 +14,17 @@ dependencies {
 	testImplementation group: 'pl.pragmatists', name: 'JUnitParams', version: '1.1.1'
 }
 
+publishing {
+    publications {
+        myLibrary(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            name = 'VVPR'
+            url = layout.buildDirectory.dir("../../mvn-repo")
+        }
+    }
+}
+
